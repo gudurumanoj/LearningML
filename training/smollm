@@ -1,0 +1,10 @@
+[[Data/cosmopedia/Smollm|Data Pipeline]] of smollm corpus
+
+### Architecture
+- smaller models adopted architecture similar to [MobileLLM](https://arxiv.org/abs/2402.14905) incorporating Grouped-Query attention (GQA)
+- embedding tying and a context length of 2048 tokens
+- context length can be further extended with some long context fine-tuning
+- tokenizer trained on the Smollm Corpus with a vocab size of 49152
+### Hyperparameters
+- trapezoidal learning rate scheduler with a cooldown phase equal to 20% of the total training time
+- [lighteval](https://github.com/huggingface/lighteval-harness) for evaluation.
